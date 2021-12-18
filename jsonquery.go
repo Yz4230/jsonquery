@@ -13,7 +13,7 @@ type JsonQuery struct {
 	Err error
 }
 
-func NewJsonQuery(doc interface{}) *JsonQuery {
+func New(doc interface{}) *JsonQuery {
 	// Create instance with
 	if reflect.TypeOf(doc).Kind() == reflect.Ptr {
 		return &JsonQuery{*doc.(*interface{}), nil}
