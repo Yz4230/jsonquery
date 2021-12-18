@@ -50,10 +50,10 @@ func TestJsonQuery_Key(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			j := &JsonQuery{
-				Doc: tt.fields.doc,
-				Err: tt.fields.err,
+				doc: tt.fields.doc,
+				err: tt.fields.err,
 			}
-			if got := j.Key(tt.args.key); !cmp.Equal(got.Doc, tt.want.Doc) && !errors.Is(got.Err, tt.want.Err) {
+			if got := j.Key(tt.args.key); !cmp.Equal(got.doc, tt.want.doc) && !errors.Is(got.err, tt.want.err) {
 				t.Errorf("JsonQuery.Key() = %v, want %v", got, tt.want)
 			}
 		})
